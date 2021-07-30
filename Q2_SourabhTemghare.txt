@@ -12,7 +12,7 @@ class Test {
         num = Pattern.compile("[0123456789]").matcher(s);
         low = Pattern.compile("[abcdefghijklmnopqrstuvwxyz]").matcher(s);
         up = Pattern.compile("[ABCDEFGHIJKLMNOPQRSTUVWXYZ]").matcher(s);
-        spec = Pattern.compile("[!@#$%^&*()-/+]").matcher(s);
+        spec = Pattern.compile("[!@#$%]").matcher(s);
         int count = 0;
         if(!num.find())
             count++;
@@ -22,8 +22,8 @@ class Test {
             count++;
         if(!spec.find())
             count++;
-        if(n+count<6){
-            count+=6-n-count;
+        if(n+count<8){
+            count+=8-n-count;
         }
         System.out.println(count+" more characters should be added.");
     }
